@@ -1,0 +1,17 @@
+display :
+mov rsi , disparr+1
+mov rcx , 02
+l4 : mov rdx , 0h
+mov rbx , 10h
+div rbx
+cmp dl , 09h
+jbe l5
+add dl , 07h
+l5 : add dl , 30h
+mov [rsi] , dl
+dec rsi
+dec rcx
+jnz l4
+
+disp_msg disparr,2
+ret
